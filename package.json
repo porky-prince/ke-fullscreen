@@ -1,0 +1,31 @@
+{
+  "name": "ke-fullscreen",
+  "version": "1.0.0",
+  "description": "This is a Javascript plug-in that can be used across browsers [Fullscreen API]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp package"
+  },
+  "keywords": [
+    "fullscreen",
+    "full-screen",
+    "full_screen",
+    "javascript",
+    "js"
+  ],
+  "author": "kay",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-jsdoc3": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
