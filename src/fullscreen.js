@@ -1,4 +1,4 @@
-/**
+/***
  * @version 1.0.0
  * @author Kay <ke_weiming@sina.com>
  * @file This is my cool script.
@@ -87,6 +87,14 @@ class Fullscreen {
     /**
      * Determine whether full screen mode is available.
      * 判断全屏模式是否是可用。
+     * @example
+     * document.querySelector('button').onclick = function () {
+     *    if(fullscreen.isEnabled()){
+     *        fullscreen.launch(document.querySelector('#fullscreen'));
+     *    }else{
+     *        //Ignore or do something else
+     *    }
+     *};
      * @returns {Boolean}
      */
     isEnabled() {
