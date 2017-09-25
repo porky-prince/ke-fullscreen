@@ -1,3 +1,11 @@
+/**
+ * @version 1.0.0
+ * @author Kay <ke_weiming@sina.com>
+ * @file This is my cool script.
+ * @license The MIT License (MIT)
+ * @copyright Copyright (c) 2017 猪肉王子
+ */
+
 'use strict';
 
 let api = {};
@@ -52,15 +60,17 @@ const apis = [
 for (let i = 0; i < apis.length; i++) {
     let methods = apis[i];
     if (methods[1] in document) {
-        methods.forEach((method, j)=> {
+        methods.forEach((method, j) => {
             api[apis[0][j]] = method;
         });
         break;
     }
 }
+//The above code reference https://sindresorhus.com/screenfull.js
+//↑============================================================↑
 
 function isFullscreenForSingleTag() {
-    var explorer = window.navigator.userAgent.toLowerCase();
+    let explorer = window.navigator.userAgent.toLowerCase();
     if (explorer.indexOf('chrome') > 0) { //chrome
         return document.body.scrollHeight == window.screen.height && document.body.scrollWidth == window.screen.width;
     } else { //IE 9+  fireFox
@@ -68,10 +78,15 @@ function isFullscreenForSingleTag() {
     }
 }
 
-/** Fullscreen. */
+/**
+ * Fullscreen.
+ * @class
+ * @classdesc This is a description of the MyClass class.
+ */
 class Fullscreen {
     /**
-     * 判断浏览器是否支持h5的全屏api.
+     * Determine whether full screen mode is available.
+     * 判断全屏模式是否是可用。
      * @returns {Boolean}
      */
     isEnabled() {
@@ -79,7 +94,8 @@ class Fullscreen {
     }
 
     /**
-     * 判断浏览器是否全屏
+     * Determine if the browser is in full screen mode.
+     * 判断浏览器是否处于全屏状态。
      * @param {Boolean} [isSingleTag=false] - 是否是单标签全屏并且不出现滚动条的页面.
      * @returns {Boolean}
      */
@@ -179,7 +195,7 @@ class Fullscreen {
      * @param {forbidSystemBtnFn} fn - The callback that ...
      */
     forbidSystemBtn(fn) {
-        document.addEventListener('keydown', (e)=> {
+        document.addEventListener('keydown', (e) => {
             if (fn && fn(e)) {
                 if (e.preventDefault) {
                     e.preventDefault();
@@ -191,4 +207,4 @@ class Fullscreen {
     }
 }
 
-module.exports = Fullscreen;
+module.exports = new Fullscreen;

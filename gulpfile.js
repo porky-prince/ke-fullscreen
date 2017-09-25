@@ -26,7 +26,7 @@ if (PROD) {
 gulp.task("build", () => {
     let b = browserify({
         entries: SRC_DIR + "fullscreen.js",
-        standalone:'Fullscreen',
+        standalone:'fullscreen',
         debug: PROD
     }).transform("babelify", { presets: ["es2015"] })
         .bundle()
@@ -42,8 +42,8 @@ gulp.task("build", () => {
 });
 
 gulp.task('doc', (cb)=> {
-    var config = require('./config-doc.json');
-    gulp.src([SRC_DIR + 'fullscreen.js'], {read: false})
+    let config = require('./jsdoc.json');
+    gulp.src(['README.md',SRC_DIR + 'fullscreen.js'], {read: false})
         .pipe(jsdoc(config, cb));
 });
 

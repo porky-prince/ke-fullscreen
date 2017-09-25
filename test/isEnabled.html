@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>isEnabled</title>
+    <link rel="stylesheet" href="../src/css/normalize.min.css">
+    <style>
+        #fullscreen{
+            width:600px;
+            height:400px;
+            background: #ccc;
+            text-align: center;
+            line-height: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="fullscreen">
+    这是一个全屏元素
+</div>
+<button>launch</button>
+<script src="../build/ke-fullscreen.js"></script>
+<script>
+    document.querySelector('button').onclick = function () {
+        if(fullscreen.isEnabled()){
+            fullscreen.launch(document.querySelector('#fullscreen'));
+        }else{
+            //Ignore or do something else
+        }
+    };
+</script>
+</body>
+</html>
