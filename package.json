@@ -1,8 +1,9 @@
 {
   "name": "ke-fullscreen",
+  "title": "ke fullscreen",
   "version": "1.0.0",
   "description": "This is a Javascript plug-in that can be used across browsers [Fullscreen API]",
-  "main": "index.js",
+  "main": "src/core.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp package"
@@ -15,6 +16,13 @@
     "js"
   ],
   "author": "kay",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/porky-prince/ke-fullscreen.git"
+  },
+  "bugs": {
+    "url": "https://gitee.com/porky-prince/ke-fullscreen/issues"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
