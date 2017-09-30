@@ -24,18 +24,18 @@ You can also visit [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web
 
 ## Simple to use
 ### html
-```
+```html
  <!-- import js -->
  <script src="ke-fullscreen.min.js"></script>
  <script>
      /* use
       * fullscreen as a global object.
       */
-     alert(fullscreen.isEnabled());
+     console.log(fullscreen.isEnabled());
  </script>
 ```
 ### css
-```
+```css
 /*
     The width and height of the dom which is passed into fullscreen.launch() as a parameter will be set to 100% in fullscreen mode.
     for example:
