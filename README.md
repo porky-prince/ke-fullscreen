@@ -22,18 +22,73 @@ $ npm install --save ke-fullscreen
 
 You can also visit [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#Browser_compatibility) to learn more.
 
+## Simple to use
+### html
+```
+ <!-- import js -->
+ <script src="ke-fullscreen.min.js"></script>
+ <script>
+     /* use
+      * fullscreen as a global object.
+      */
+     alert(fullscreen.isEnabled());
+ </script>
+```
+### css
+```
+/*
+    The width and height of the dom which is passed into fullscreen.launch() as a parameter will be set to 100% in full screen mode.
+    for example:
+                fullscreen.launch(document.querySelector('#container')).
+*/
+#container:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+#container:-moz-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+#container:-ms-fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
+#container:fullscreen {
+    width: 100%;
+    height: 100%;
+}
+```
+
+## Package
+
+```
+$ gulp package
+```
+or
+
+```
+$ npm start
+```
+
+## Build (development)
+
+```
+$ gulp package-dev
+```
 
 ## Documentation
 
+```
+$ gulp doc
+```
 
+## Reference
 
-
-## Resources
-
-- [Using the Fullscreen API in web browsers](http://hacks.mozilla.org/2012/01/using-the-fullscreen-api-in-web-browsers/)
-- [MDN - Fullscreen API](https://developer.mozilla.org/en/DOM/Using_full-screen_mode)
-- [W3C Fullscreen spec](http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html)
-- [Building an amazing fullscreen mobile experience](http://www.html5rocks.com/en/mobile/fullscreen/)
+- [MDN - Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API)
+- [screenfull.js](https://github.com/sindresorhus/screenfull.js)
 
 
 ## License

@@ -2,28 +2,26 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>isEnabled</title>
+    <title>isFullscreen-noScroll</title>
     <link rel="stylesheet" href="./css/normalize.min.css">
     <style>
-        #container {
-            width: 600px;
-            height: 400px;
+        div{
+            width:600px;
+            height:400px;
             background: #ccc;
             text-align: center;
-            line-height: 400px;
         }
     </style>
 </head>
 <body>
-<div id="container"></div>
-<button>launch</button>
+<div id="container"><button>click</button></div>
 <script src="../build/ke-fullscreen.js"></script>
 <script>
     document.querySelector('button').onclick = function () {
-        if (fullscreen.isEnabled()) {
-            fullscreen.launch(document.querySelector('#container'));
-        } else {
-            //Ignore or do something else
+        if(!fullscreen.isFullscreen(true)){
+            fullscreen.launch(document.querySelector('div'));
+        }else{
+            fullscreen.exit();
         }
     };
 </script>

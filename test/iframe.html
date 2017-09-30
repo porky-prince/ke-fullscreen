@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>iframe</title>
+    <link rel="stylesheet" href="./css/normalize.min.css">
+    <style>
+        #container {
+            width: 600px;
+            height: 400px;
+            background: #ccc;
+            text-align: center;
+        }
+
+        #container:-webkit-full-screen {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container:-moz-full-screen {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container:-ms-fullscreen {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container:fullscreen {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<iframe id="container" src="https://www.baidu.com" frameborder="0"></iframe>
+<button>launch</button>
+<script src="../build/ke-fullscreen.js"></script>
+<script>
+    document.querySelector('button').onclick = function () {
+        if (!fullscreen.isFullscreen()) {
+            fullscreen.launch(window.frames['container']);
+        } else {
+            fullscreen.exit();
+        }
+    };
+</script>
+</body>
+</html>

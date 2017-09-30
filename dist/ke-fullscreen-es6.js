@@ -1,3 +1,99 @@
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.fullscreen = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+/**
+ * compatibility
+ * The code reference https://github.com/sindresorhus/screenfull.js
+ */
+
+'use strict';
+
+let api = null;
+
+const apis = [
+    [
+        'requestFullscreen',
+        'exitFullscreen',
+        'fullscreenElement',
+        'fullscreenEnabled',
+        'fullscreenchange',
+        'fullscreenerror'
+    ],
+    // new WebKit
+    [
+        'webkitRequestFullscreen',
+        'webkitExitFullscreen',
+        'webkitFullscreenElement',
+        'webkitFullscreenEnabled',
+        'webkitfullscreenchange',
+        'webkitfullscreenerror'
+
+    ],
+    // old WebKit
+    [
+        'webkitRequestFullScreen',
+        'webkitCancelFullScreen',
+        'webkitCurrentFullScreenElement',
+        'webkitCancelFullScreen',
+        'webkitfullscreenchange',
+        'webkitfullscreenerror'
+
+    ],
+    [
+        'mozRequestFullScreen',
+        'mozCancelFullScreen',
+        'mozFullScreenElement',
+        'mozFullScreenEnabled',
+        'mozfullscreenchange',
+        'mozfullscreenerror'
+    ],
+    [
+        'msRequestFullscreen',
+        'msExitFullscreen',
+        'msFullscreenElement',
+        'msFullscreenEnabled',
+        'MSFullscreenChange',
+        'MSFullscreenError'
+    ]
+];
+
+for (let i = 0; i < apis.length; i++) {
+    let methods = apis[i];
+    if (methods[1] in document) {
+        api = {};
+        methods.forEach((method, j) => {
+            api[apis[0][j]] = method;
+        });
+        break;
+    }
+}
+
+module.exports = api;
+
+},{}],2:[function(require,module,exports){
+/**
+ * This module exports the instance object of the [Class Fullscreen].
+ *
+ * 这个模块导出Fullscreen类的实例对象。
+ * @module ke-fullscreen
+ */
+
+'use strict';
+
+let api = require('./compatibility.js');
+
+if (api === null) {
+    //for old IE
+    if (window.ActiveXObject) {
+        try {
+            let ws = new ActiveXObject("WScript.Shell");
+            ws && ws.SendKeys("{F11}");
+        } catch (e) {}
+    } else {
+        console.warn('This browser does not support the full screen API of h5. If the browser has full screen mode, such as the F11 shortcut, you may be able to remind users to use this method.');
+    }
+}
+
+module.exports = require('./fullscreen.js');
+},{"./compatibility.js":1,"./fullscreen.js":3}],3:[function(require,module,exports){
 'use strict';
 
 let api = require('./compatibility.js') || {},
@@ -286,3 +382,6 @@ class Fullscreen {
 }
 
 module.exports = new Fullscreen();
+
+},{"./compatibility.js":1}]},{},[2])(2)
+});
