@@ -37,7 +37,7 @@ You can also visit [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web
 ### css
 ```
 /*
-    The width and height of the dom which is passed into fullscreen.launch() as a parameter will be set to 100% in full screen mode.
+    The width and height of the dom which is passed into fullscreen.launch() as a parameter will be set to 100% in fullscreen mode.
     for example:
                 fullscreen.launch(document.querySelector('#container')).
 */
