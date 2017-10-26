@@ -4,6 +4,11 @@
 
 ---
 
+## repository
+[github](https://github.com/porky-prince/ke-fullscreen.git)
+
+[码云](https://gitee.com/porky-prince/ke-fullscreen.git)
+
 ## Install
 
 ```
