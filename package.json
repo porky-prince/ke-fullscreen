@@ -2,7 +2,7 @@
   "name": "ke-fullscreen",
   "version": "1.1.0",
   "description": "This is a Javascript plug-in that can be used across browsers [Fullscreen API]",
-  "author": "PorkyKe",
+  "author": "Porky Ke",
   "license": "MIT",
   "repository": {
     "type": "git",
